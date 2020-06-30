@@ -385,6 +385,9 @@ library(&quot;ggplot2&quot;)</code></pre>
 <pre class="r"><code>library(&quot;lattice&quot;)
 
 # loading the .csv file as a data table
+url &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+download.file(url, destfile = paste0(getwd(), &#39;/repdata%2Fdata%2Factivity.zip&#39;), method = &quot;curl&quot;)
+unzip(&quot;repdata%2Fdata%2Factivity.zip&quot;,exdir = &quot;data&quot;)
 activity &lt;- as.data.table(read.csv(&quot;activity.csv&quot;))</code></pre>
 </div>
 <div id="processtransform-the-data-if-necessary-into-a-format-suitable-for-your-analysis" class="section level3">

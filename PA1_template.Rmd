@@ -23,6 +23,9 @@ library("ggplot2")
 library("lattice")
 
 # loading the .csv file as a data table
+url <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
+download.file(url, destfile = paste0(getwd(), '/repdata%2Fdata%2Factivity.zip'), method = "curl")
+unzip("repdata%2Fdata%2Factivity.zip",exdir = "data")
 activity <- as.data.table(read.csv("activity.csv"))
 ```
 
@@ -190,4 +193,3 @@ xyplot(steps ~ interval | datetype, activity,
 		(Note: Not Average Steps)", 
        layout=c(1,2))
 ```
-
